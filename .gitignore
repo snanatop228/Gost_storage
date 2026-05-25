@@ -12,6 +12,7 @@ __pycache__/
 *.sqlite
 *.db
 
+
 # Файлы IDE и редакторов
 .vscode/
 .idea/

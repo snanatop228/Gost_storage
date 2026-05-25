@@ -18,6 +18,7 @@ ALLOWED_EXTENSIONS = {'pdf', 'doc', 'docx'}
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
+
 # ---------- База данных SQLite ----------
 def init_db():
     with sqlite3.connect('gosts.db') as conn:

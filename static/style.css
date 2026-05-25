@@ -35,6 +35,7 @@ button {
     padding: 0.5rem;
     margin-bottom: 1rem;
 }
+
 .alert-success { background: #2ecc71; }
 .alert-danger { background: #e74c3c; }
 .alert-warning { background: #f39c12; }

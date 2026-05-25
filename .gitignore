@@ -1,0 +1,41 @@
+# Зависимости (менеджеры пакетов)
+node_modules/
+vendor/
+.env
+.venv
+venv/
+__pycache__/
+*.pyc
+
+# Логи и базы данных
+*.log
+*.sqlite
+*.db
+
+# Файлы IDE и редакторов
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store (macOS)
+Thumbs.db (Windows)
+
+# Скомпилированные файлы и сборки
+*.pyc
+*.class
+dist/
+build/
+target/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Секреты и конфигурации
+.env
+.secrets
+config.local.*
+*.key
+*.pem
+*.p12

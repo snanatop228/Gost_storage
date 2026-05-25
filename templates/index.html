@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Хранилище ГОСТов металлургической кафедры УрФУ</h1>
+<form action="{{ url_for('gost_list') }}" method="get">
+    <input type="text" name="search" placeholder="Быстрый поиск по номеру или названию">
+    <button type="submit">Искать</button>
+</form>
+<h2>Последние добавленные ГОСТы</h2>
+<ul>
+    {% for gost in recent %}
+        <li><a href="{{ url_for('gost_detail', gost_id=gost.id) }}">{{ gost.number }} - {{ gost.title }}</a></li>
+    {% else %}
+        <li>Нет ГОСТов</li>
+    {% endfor %}
+</ul>
+{% endblock %}

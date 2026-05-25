@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ 'Редактировать ГОСТ' if gost else 'Добавить ГОСТ' }}</h1>
+<form method="post" enctype="multipart/form-data">
+    <input type="text" name="number" value="{{ gost.number or '' }}" placeholder="Номер ГОСТа" required>
+    <input type="text" name="title" value="{{ gost.title or '' }}" placeholder="Название" required>
+    <input type="number" name="year" value="{{ gost.year or '' }}" placeholder="Год введения">
+    <textarea name="scope" placeholder="Область применения">{{ gost.scope or '' }}</textarea>
+    <textarea name="keywords" placeholder="Ключевые слова (через запятую)">{{ gost.keywords or '' }}</textarea>
+    <input type="file" name="file" accept=".pdf,.doc,.docx">
+    <button type="submit">Сохранить</button>
+</form>
+{% endblock %}

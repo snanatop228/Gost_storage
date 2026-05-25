@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ gost.number }} - {{ gost.title }}</h1>
+<p><strong>Год введения:</strong> {{ gost.year or '—' }}</p>
+<p><strong>Область применения:</strong> {{ gost.scope or '—' }}</p>
+<p><strong>Ключевые слова:</strong> {{ gost.keywords or '—' }}</p>
+{% if gost.filename %}
+    <a href="{{ url_for('uploaded_file', filename=gost.filename) }}">Скачать файл</a>
+{% endif %}
+<br>
+{% if current_user.is_authenticated and current_user.role in ['admin', 'editor'] %}
+    <a href="{{ url_for('gost_edit', gost_id=gost.id) }}">Редактировать</a>
+    <form method="post" action="{{ url_for('gost_delete', gost_id=gost.id) }}" style="display:inline;">
+        <button type="submit" onclick="return confirm('Удалить?')">Удалить</button>
+    </form>
+{% endif %}
+{% endblock %}

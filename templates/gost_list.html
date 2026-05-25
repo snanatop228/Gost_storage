@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Все ГОСТы</h1>
+<form method="get">
+    <input type="text" name="search" value="{{ search or '' }}" placeholder="Поиск по номеру/названию">
+    <button type="submit">Поиск</button>
+</form>
+<ul>
+    {% for gost in gosts %}
+        <li><a href="{{ url_for('gost_detail', gost_id=gost.id) }}">{{ gost.number }} - {{ gost.title }}</a></li>
+    {% else %}
+        <li>Ничего не найдено</li>
+    {% endfor %}
+</ul>
+{% endblock %}
